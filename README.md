@@ -1,0 +1,13 @@
+# CPlusPlus-Map-Class
+A C++ map class that maps a key-value pair. Made without using any part of the C++ Standard Template Library. Uses abstract data types so the data types stored by the map are not restricted and can be whatever the user assigns. The size of the array increases automatically as more items are added. The class provides the following operations:
+
+    Insert - Takes parameters of type 'key' and 'value'. It checks if the key already exists in the array as all keys in a map must be unique, it does this by running through a for loop comparing the key being input with existing keys. If the key exists, it returns false, if it doesn't then the array is dynamically resized by creating a temporary array, copying everything in the original array over to it, freeing the memory of the original array, increasing the size of the array variable, creating a new main array with the increased size variable and copying everything back over to it. The temporary array’s memory is then freed up.
+    ReadKey - Takes a parameter of type 'int' and returns the key in the corresponding element in the map array.
+    ReadValue - Takes a parameter of type 'key', which is a template data type so can be anything. It checks if the key exists by going through comparing each key in the array to the inputted key, and once a match is found, it returns the value, which is also a template data type, so can be anything.
+    Update - Takes parameters of type 'key' and 'value'. It checks if the key exists by going through comparing each key in the array to the inputted key, and once a match is found, it updates the value to what the user put in. If there is no match, NULL is returned.
+    Delete - Takes a parameter of type 'key'. It checks if the inputted key exists by going through comparing each key in the array to the inputted key, if there is no match, NULL is returned, if a match is found, it moves all elements after the selected element back one position in the array, overwriting the selected element and moving all others back by one place. This leaves 2 copies of the last element in the array, so to remove it the array is reduced in size by 1 the same way as it is increased in size in the 'Insert' method.
+    Size - Returns the number of elements in the array.
+    Clear - Clears the array of all elements and resets the size. It does this by resetting the size, freeing the memory and then re-initialising the object with the new array size.
+    Save - Copies the data from the map into a text file by looping through the map array’s elements and saving them to the file.
+    Load - Retrieves data from a text file and copies it into the map class. It loops through the file line by line and saves the data into the map keys and map values. 
+
